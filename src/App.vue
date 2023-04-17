@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <header class="Page_Header"><page-header></page-header></header>
+    <main class="Page_Main"><song-display></song-display></main>
+    <footer class="Page_Footer"><page-footer></page-footer></footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PageHeader from './components/PageHeader.vue';
+import PageFooter from './components/PageFooter.vue';
+import SongDisplay from './components/SongDisplay.vue';
 
 export default {
-  name: 'App',
+  name: 'Layout_Page',
   components: {
-    HelloWorld
+
+    PageHeader,
+    PageFooter,
+    SongDisplay,
+
+   
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+.Page_Header{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+min-height: 10vh;
+justify-items: center;
+align-items: center;
+}
+
+.Page_Main{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+min-height: 80vh;
+justify-items: center;
+align-items: center;
+}
+
+.Page_Footer{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+min-height: 10vh;
+justify-items: center;
+align-items: center;
 }
 </style>
